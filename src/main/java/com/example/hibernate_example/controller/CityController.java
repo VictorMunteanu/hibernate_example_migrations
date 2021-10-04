@@ -1,6 +1,7 @@
 package com.example.hibernate_example.controller;
 
 import com.example.hibernate_example.model.City;
+import com.example.hibernate_example.model.Country;
 import com.example.hibernate_example.service.CityService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class CityController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<City> update(@PathVariable("id") long id, @RequestBody City city) {
+    public ResponseEntity<City> update(@PathVariable("id") long id, @RequestBody City city/*, @RequestBody Country country*/) {
         return new ResponseEntity<City>(cityService.updateCity(city, id), HttpStatus.OK);
     }
 
